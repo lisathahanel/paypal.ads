@@ -10,11 +10,67 @@
 </p><p style="text-align: center;">
 
 
- <iframe src="https://www.paypalads.com/search" 
-        frameborder="0" 
-        width="100%" 
-        height="500">
-</iframe>
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>RSS Feed Display</title>
+  <style>
+    #feed-container {
+      width: 80%;
+      margin: 40px auto;
+    }
 
+    .feed-item {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+    }
 
-</p></iframe></div><p></p>
+    .feed-item img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+    }
+
+    .feed-item h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="feed-container"></div>
+
+<script>
+  const feedUrl = 'https://www.paypalads.com/feeds/posts/default?alt=rss';
+  const feedContainer = document.getElementById('feed-container');
+
+  fetch(feedUrl)
+    .then(response => response.text())
+    .then(data => {
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(data, 'text/xml');
+      const items = xmlDoc.getElementsByTagName('item');
+
+      Array.from(items).forEach(item => {
+        const title = item.getElementsByTagName('title')[0].textContent;
+        const link = item.getElementsByTagName('link')[0].textContent;
+        const description = item.getElementsByTagName('description')[0].textContent;
+
+        const feedItem = document.createElement('div');
+        feedItem.classList.add('feed-item');
+        feedItem.innerHTML = `
+          <h2><a href="${link}">${title}</a></h2>
+          <div>${description}</div>
+        `;
+
+        feedContainer.appendChild(feedItem);
+      });
+    })
+    .catch(error => console.error('Error fetching feed:', error));
+</script>
+
+</body>
+</html>
