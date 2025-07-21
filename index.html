@@ -13,6 +13,7 @@
     vignetteBanner.style.justifyContent = 'center';
     vignetteBanner.style.alignItems = 'center';
     vignetteBanner.style.zIndex = '9999';
+
     var bannerContent = document.createElement('div');
     bannerContent.style.background = '#fff';
     bannerContent.style.padding = '20px';
@@ -20,41 +21,11 @@
     bannerContent.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
     bannerContent.style.textAlign = 'center';
     bannerContent.style.position = 'relative';
-    bannerContent.innerHTML = "<div class='sora-ads-full'> <iframe allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='true' frameborder='0' height='470' referrerpolicy='strict-origin-when-cross-origin' src='https://www.main.paypalads.com/' width='210'> </iframe> </div><br><span style='font-size: 24px; cursor: pointer;'>&times;</span>";
-    var closeBtn = bannerContent.querySelector('span');
-    closeBtn.addEventListener('click', function() {
-        vignetteBanner.style.display = 'none';
-    });
-    vignetteBanner.appendChild(bannerContent);
-    document.body.appendChild(vignetteBanner);
-</script>
+    bannerContent.style.fontFamily = 'monospace'; // optional, for style
+    bannerContent.innerHTML = `<div class='sora-ads-full'>
+        ( 👁️👃 👁️ )<br>
+             </div>`;
 
-
-In this version, the close button is centered below the iframe content. When clicked, it will hide the vignette banner.
-[8:08 pm, 21/07/2025] Allah Is Everything To Me: put  it up then where it was add this featured ad
-[8:08 pm, 21/07/2025] Meta AI: Here's the updated script:
-
-
-<script>
-    var vignetteBanner = document.createElement('div');
-    vignetteBanner.style.position = 'fixed';
-    vignetteBanner.style.top = '0';
-    vignetteBanner.style.left = '0';
-    vignetteBanner.style.width = '100%';
-    vignetteBanner.style.height = '100%';
-    vignetteBanner.style.background = 'rgba(0, 0, 0, 0.5)';
-    vignetteBanner.style.display = 'flex';
-    vignetteBanner.style.justifyContent = 'center';
-    vignetteBanner.style.alignItems = 'center';
-    vignetteBanner.style.zIndex = '9999';
-    var bannerContent = document.createElement('div');
-    bannerContent.style.background = '#fff';
-    bannerContent.style.padding = '20px';
-    bannerContent.style.borderRadius = '10px';
-    bannerContent.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
-    bannerContent.style.textAlign = 'center';
-    bannerContent.style.position = 'relative';
-    bannerContent.innerHTML = "<div class='sora-ads-full'> <iframe allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='true' frameborder='0' height='450' referrerpolicy='strict-origin-when-cross-origin' src='https://www.paypalads.com/' width='350'> </iframe> </div>";
     var closeBtn = document.createElement('span');
     closeBtn.style.position = 'absolute';
     closeBtn.style.top = '10px';
@@ -63,14 +34,14 @@ In this version, the close button is centered below the iframe content. When cli
     closeBtn.style.cursor = 'pointer';
     closeBtn.style.color = '#000';
     closeBtn.innerHTML = '&times;';
-    closeBtn.addEventListener('click', function() {
+    closeBtn.addEventListener('click', function () {
         vignetteBanner.style.display = 'none';
     });
+
     bannerContent.appendChild(closeBtn);
     vignetteBanner.appendChild(bannerContent);
     document.body.appendChild(vignetteBanner);
 </script>
-
 
   <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
