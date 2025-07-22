@@ -1,47 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    var vignetteBanner = document.createElement('div');
-    vignetteBanner.style.position = 'fixed';
-    vignetteBanner.style.top = '0';
-    vignetteBanner.style.left = '0';
-    vignetteBanner.style.width = '100%';
-    vignetteBanner.style.height = '100%';
-    vignetteBanner.style.background = 'rgba(0, 0, 0, 0.5)';
-    vignetteBanner.style.display = 'flex';
-    vignetteBanner.style.justifyContent = 'center';
-    vignetteBanner.style.alignItems = 'center';
-    vignetteBanner.style.zIndex = '9999';
-
-    var bannerContent = document.createElement('div');
-    bannerContent.style.background = '#fff';
-    bannerContent.style.padding = '20px';
-    bannerContent.style.borderRadius = '10px';
-    bannerContent.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
-    bannerContent.style.textAlign = 'center';
-    bannerContent.style.position = 'relative';
-    bannerContent.style.fontFamily = 'monospace'; // optional, for style
-    bannerContent.innerHTML = `<div class='sora-ads-full'>
-        ( 👁️👃 👁️ )<br>
-             </div>`;
-
-    var closeBtn = document.createElement('span');
-    closeBtn.style.position = 'absolute';
-    closeBtn.style.top = '10px';
-    closeBtn.style.right = '10px';
-    closeBtn.style.fontSize = '24px';
-    closeBtn.style.cursor = 'pointer';
-    closeBtn.style.color = '#000';
-    closeBtn.innerHTML = '&times;';
-    closeBtn.addEventListener('click', function () {
-        vignetteBanner.style.display = 'none';
-    });
-
-    bannerContent.appendChild(closeBtn);
-    vignetteBanner.appendChild(bannerContent);
-    document.body.appendChild(vignetteBanner);
-</script>
 
   <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
